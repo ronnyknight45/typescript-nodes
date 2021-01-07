@@ -43,7 +43,9 @@ export class AppComponent {
   createLinks() {
     this.nodes.forEach(node => {
       let link = new LinkModel(this.getNode(node.parentNode), node, false, true);
-      this.generatedLinks.push(link);
+
+      if (link.source.id != link.target.id)
+        this.generatedLinks.push(link);
     });
 
     return this.generatedLinks;
