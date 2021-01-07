@@ -27,23 +27,11 @@ export class AppComponent {
     { source: this.nodes[5], target: this.nodes[6], left: false, right: true }
   ];
 
-  getTargetNode(sourceNode: any) {
-    debugger
-    let foundNode: any;
-    this.nodes.forEach(node => {
-      debugger
-      if (sourceNode.parentNode == node.id) foundNode = node;
-    });
-
-    return foundNode;
-  }
-
   generatedLinks = [];
 
   getNode(nodeId: number) {
     let foundNode: any;
     this.nodes.forEach(node => {
-      debugger
       if (node.id == nodeId) {
         foundNode = node;
       }
@@ -53,9 +41,7 @@ export class AppComponent {
   }
 
   createLinks() {
-    debugger
     this.nodes.forEach(node => {
-      debugger
       let link = new LinkModel(this.getNode(node.parentNode), node, false, true);
       this.generatedLinks.push(link);
     });
