@@ -53,6 +53,4 @@ export class AppComponent {
     console.log(this.createLinks());
   }
 
-  // createLinks();
-  // console.log(generatedLinks);
 }
